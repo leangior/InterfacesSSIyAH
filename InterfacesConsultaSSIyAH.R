@@ -3,7 +3,7 @@ library(httr)
 library(xts)
 #Interfaces de consulta apra la obtención de series puntuales/areales de observaciones y pronósticos, generadas por el Sistema de Información y Alerta Hidrológico de CdP (INA).
 #Interfaz para la obtención de serie de datos puntuales a través de API SSIyAH-INA. Requiere Id de Serie en DB meteorology, fecha de inicio y fecha de fin y nivel de agregación (opcional). Devuelve un objeto TimeSeries (xts R). Admite agregación diaria, semanal y mensual ('Daily','Weekly','Monthly').  
-getDBPointSerie<-function(Id,Start,End,Agg='none',Fill='yes',configFile='/home/leandro/01-PROCEDIMIENTOS/02-FUNCIONES/Config.json'){
+getDBPointSerie<-function(Id,Start,End,Agg='none',Fill='yes',configFile='Config.json'){
   data=list()  
   config=fromJSON(configFile)
   URI=paste0(config$api$url,"/obs/puntual/series/",Id,"/observaciones?timestart=",as.Date(Start),"&timeend=",as.Date(End)+1)
@@ -21,7 +21,7 @@ getDBPointSerie<-function(Id,Start,End,Agg='none',Fill='yes',configFile='/home/l
   }
 }
 #Interfaz para la obtención de serie de datos puntuales a través de API SSIyAH-INA. Requiere Id de Serie en DB meteorology, fecha de inicio y fecha de fin y nivel de agregación (opcional). Devuelve un objeto TimeSeries (xts R). Admite agregación diaria, semanal y mensual ('Daily','Weekly','Monthly').  
-getDBArealSerie<-function(Id,Start,End,Agg='none',Fill='yes',configFile='/home/leandro/01-PROCEDIMIENTOS/02-FUNCIONES/Config.json'){
+getDBArealSerie<-function(Id,Start,End,Agg='none',Fill='yes',configFile='Config.json'){
   data=list()  
   config=fromJSON(configFile)
   URI=paste0(config$api$url,"/obs/areal/series/",Id,"?timestart=",as.Date(Start),"&timeend=",as.Date(End)+1)
@@ -39,7 +39,7 @@ getDBArealSerie<-function(Id,Start,End,Agg='none',Fill='yes',configFile='/home/l
   }
 }
 #Rutina para la obtención de corridas (previsiones/simulaciones). VarId: 4 (caudal) 2 (nivel)  
-getDBLastForecast<-function(StId,CalId,RunId,Start=Sys.Date()+1,End=Sys.Date()+15,Agg='none',Fill='yes',configFile='/home/leandro/01-PROCEDIMIENTOS/02-FUNCIONES/Config.json',VarId=4,Qualy='main'){
+getDBLastForecast<-function(StId,CalId,RunId,Start=Sys.Date()+1,End=Sys.Date()+15,Agg='none',Fill='yes',configFile='Config.json',VarId=4,Qualy='main'){
   data=list()  
   config=fromJSON(configFile)
   URI=paste0(config$api$url,"/sim/calibrados/",CalId,"/corridas/last?estacion_id=",StId,"&var_id=",VarId,"&qualifier=",Qualy,sep="")
