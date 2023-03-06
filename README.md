@@ -5,12 +5,18 @@ title: "R Notebook. Interfaces SSIyAH-INA"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+Las librerías que se presentan se encuentran en fase experimental de desarrollo. Las mismas son de utilidad para analistas y pronosticadores que deseen ingestar observaciones y previsiones numéricas disonibles en el sistema de manejo y gestión de datos de SSIyAH-INA, en ambiente R.
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+- 0 Ingresar la información necesaria en el archivo de configuración
+
+El archivo de configuración es un objeto json en donde se deben especificar el usuario (en _database_ campo _user_, la cual ha sido provista por el administrador de sistema), la _url_ de la api (en este repositorio ya aparece configurada). Finalmente, en el campo _token_ debe insertarse la credencial provista por el administrador.  
+
+- 1 Invocar a los procedimientos de ingesta.
+
+Comenzamos asumiendo que el usuario se encuentra en el nivel de carpeta para el cual se ha descargado o clonado este repositorio. 
 
 ```{r}
-plot(cars)
+source("InterfacesConsultaSSIyAH.R")
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
