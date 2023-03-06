@@ -1,13 +1,13 @@
 {
     "database":{
-      "dbname": "meteorology",
-      "user": "sololectura",
-      "host": "10.10.9.14",
-      "port": 5432
+      "dbname": "NA",
+      "user": "NA",
+      "host": "NA",
+      "port": "NA"
     },
     "api":{
       "url": "https://alerta.ina.gob.ar/a6",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImxnaW9yZGFubyIsImlhdCI6MTUxNjIzOTAyMn0.NKsPGWzRYeE4rOMNF26MSZgTG_-VAsQ8hPqVcagmYpE",
+      "token": "NA",
       "timeout": 100
     }
   }
