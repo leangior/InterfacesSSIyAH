@@ -8,7 +8,7 @@ Las librerías que se presentan se encuentran en fase experimental de desarrollo
 
 - Ingresar la información necesaria en el archivo de configuración ("Config.json")
 
-El archivo de configuración es un _objeto json_ en donde se deben especificar el usuario (en _database_ campo _user_, provisto por el administrador, por defecto el usuario de e-mail que solicitó credenciales) y la _url_ de la api (en este repositorio ya aparece configurada). Asimismo, en el campo _token_ debe insertarse la credencial provista por el administrador.  
+El archivo de configuración es un _objeto json_ en donde se deben especificar el usuario (en _database_ campo _user_, provisto por el administrador, por defecto el usuario de e-mail que solicitó credenciales) y la _url_ de la api (en este repositorio ya aparece configurada). Asimismo, en el campo _token_ de _api_ debe insertarse la credencial provista por el administrador.  
 
 - Abrir sesión de R e invocar a los procedimientos de ingesta.
 
