@@ -1,13 +1,13 @@
 {
     "database":{
-      "dbname": "NA",
-      "user": "NA",
-      "host": "NA",
-      "port": "NA"
+      "dbname": "yourdb",
+      "user": "john@doe",
+      "host": "localhost",
+      "port": "5432"
     },
     "api":{
       "url": "https://alerta.ina.gob.ar/a6",
-      "token": "NA",
+      "token": "yourprovidedtoken",
       "timeout": 100
     }
   }
